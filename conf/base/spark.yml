@@ -1,8 +1,30 @@
 # You can define spark specific configuration here.
 
 spark.driver.maxResultSize: 3g
+# add
+spark.executor.memory: 4g
+spark.executor.instances: 2
+spark.executor.cores: 2
+spark.default.parallelism: 4
+
 spark.hadoop.fs.s3a.impl: org.apache.hadoop.fs.s3a.S3AFileSystem
 spark.sql.execution.arrow.pyspark.enabled: true
 
 # https://kedro.readthedocs.io/en/stable/tools_integration/pyspark.html#tips-for-maximising-concurrency-using-threadrunner
 spark.scheduler.mode: FAIR
+
+# Sparkのアプリケーション名
+spark.app.name: "my-app-name"
+
+# SparkのマスターノードのURL
+# "local"を指定すると、ローカルモードで実行します
+spark.master: "local[2]"
+
+# Sparkの実行モード
+spark.submit.deployMode: "client"
+
+config:
+  spark:
+    submit_args: --conf spark.hadoop.fs.file.impl=org.apache.hadoop.fs.RawLocalFileSystem
+    spark_home: C:\spark\spark-3.4.0-bin-hadoop3\bin
+    hadoop_home: C:\spark\spark-3.4.0-bin-hadoop3\bin
