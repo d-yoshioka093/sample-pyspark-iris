@@ -9,7 +9,7 @@ formatters:
 handlers:
   console:
     class: logging.StreamHandler
-    level: INFO
+    level: DEBUG
     formatter: simple
     stream: ext://sys.stdout
 
@@ -38,10 +38,15 @@ handlers:
 
 loggers:
   kedro:
+    # level: DEBUG
     level: INFO
+    handlers: [console]
+    propagate: false
 
   sample_pyspark_iris:
     level: INFO
+    handlers: [console, info_file_handler, error_file_handler]  # handlers を追加
+    propagate: false
 
 root:
   # File-based logging is disabled by default so that the starter works immediately on Databricks Repos.
