@@ -38,8 +38,8 @@ handlers:
 
 loggers:
   kedro:
-    # level: DEBUG
-    level: INFO
+    level: DEBUG
+    # level: INFO
     handlers: [console]
     propagate: false
 
