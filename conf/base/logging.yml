@@ -9,7 +9,7 @@ formatters:
 handlers:
   console:
     class: logging.StreamHandler
-    level: DEBUG
+    level: DEBUG #log level変更：INFO
     formatter: simple
     stream: ext://sys.stdout
 
@@ -38,8 +38,7 @@ handlers:
 
 loggers:
   kedro:
-    level: DEBUG
-    # level: INFO
+    level: DEBUG #log level変更：INFO
     handlers: [console]
     propagate: false
 

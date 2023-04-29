@@ -2,46 +2,63 @@
 
 ## Overview
 
-This is your new Kedro project, which was generated using `Kedro 0.18.7`.
+これは、`Kedro 0.18.7`を使用して生成された、新しいKedroプロジェクトです。
+プロジェクトのアーキテクチャーとして、pysparkを使用してirisの予測タスクを実行します。
 
-Take a look at the [Kedro documentation](https://kedro.readthedocs.io) to get started.
+詳細情報、基本的なアーキテクチャーの情報については、[Kedroドキュメント](https://kedro.readthedocs.io)を参照してください。
 
 ## Rules and guidelines
 
-In order to get the best out of the template:
+テンプレートの効果を最大限に引き出すには：
 
-* Don't remove any lines from the `.gitignore` file we provide
-* Make sure your results can be reproduced by following a [data engineering convention](https://kedro.readthedocs.io/en/stable/faq/faq.html#what-is-data-engineering-convention)
-* Don't commit data to your repository
-* Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`
+* `.gitignore` ファイルから定義を削除しない
+* [data engineering convention](https://kedro.readthedocs.io/en/stable/faq/faq.html#what-is-data-engineering-convention)に従い、結果が再現できることを確認
+* データをリポジトリにコミットしない
+* 認証情報やローカル設定をリポジトリにコミットせず、すべての認証情報とローカル設定を `conf/local/` に保存
+* 改善が必要な場合、必ずレビューの上でリポジトリにブランチをマージすること
 
 ## How to install dependencies
 
-Declare any dependencies in `src/requirements.txt` for `pip` installation and `src/environment.yml` for `conda` installation.
+仮想環境を作成し、当プロジェクト専用のpython実行環境を追加してください。
 
-To install them, run:
+```
+conda create --name kedro-environment python=3.10
+```
+
+`pip` をインストールする場合は `src/requirements.txt`で、~~ `conda` をインストールする場合は `src/environment.yml` で~~、依存関係を宣言してください。
+
+`pip`インストール:
 
 ```
 pip install -r src/requirements.txt
 ```
 
+ローカル環境で`spark`を実行するため、`spark`と`hadoop`の実行環境をローカルPCに構築する必要があります。構築のイメージは所定のWebページより、それぞれに必要な実行ファイル群をローカルPCに配置し、環境変数を追加してそれらの実行ファイルがWindows上で認識される必要があります。
+詳細については、[winutilsのREADME.md](https://github.com/kitfactory/winutils)を参照してください。
+
+
+
+
 ## How to run your Kedro pipeline
 
-You can run your Kedro project with:
+kedroプロジェクト実行:
 
 ```
 kedro run
 ```
 
+kedro run時のログ出力設定については、debugレベルまで出力するように定義しています。より簡易なログレベルに変更したい場合、`conf\base\logging.yml`の`#log level変更`部分を`INFO`に変更してください。
+
 ## How to test your Kedro project
 
-Have a look at the file `src/tests/test_run.py` for instructions on how to write your tests. You can run your tests as follows:
+テスト実行:  
+※テストの書き方については、`src/tests/test_run.py` ファイルを参照
 
 ```
 kedro test
 ```
 
-To configure the coverage threshold, go to the `.coveragerc` file.
+coverage thresholdを設定するには、`.coveragerc` ファイルにアクセスします。
 
 ## Project dependencies
 
