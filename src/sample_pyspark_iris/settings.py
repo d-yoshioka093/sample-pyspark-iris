@@ -36,3 +36,11 @@ HOOKS = (SparkHooks(),)
 # Class that manages the Data Catalog.
 # from kedro.io import DataCatalog
 # DATA_CATALOG_CLASS = DataCatalog
+
+# デフォルトで以下の設定
+# config_patterns = {
+#     "catalog": ["catalog*", "catalog*/**", "**/catalog*"],
+#     "parameters": ["parameters*", "parameters*/**", "**/parameters*"],
+#     "credentials": ["credentials*", "credentials*/**", "**/credentials*"],
+#     "logging": ["logging*", "logging*/**", "**/logging*"],
+# }
