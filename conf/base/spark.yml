@@ -22,9 +22,3 @@ spark.master: "local[2]"
 
 # Sparkの実行モード
 spark.submit.deployMode: "client"
-
-config:
-  spark:
-    submit_args: --conf spark.hadoop.fs.file.impl=org.apache.hadoop.fs.RawLocalFileSystem
-    spark_home: C:\spark\spark-3.4.0-bin-hadoop3\bin
-    hadoop_home: C:\spark\spark-3.4.0-bin-hadoop3\bin
