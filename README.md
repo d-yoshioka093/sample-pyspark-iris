@@ -33,8 +33,8 @@ conda create --name kedro-environment python=3.10
 pip install -r src/requirements.txt
 ```
 
-ローカル環境で`spark`を実行するため、`spark`と`hadoop`の実行環境をローカルPCに構築する必要があります。構築のイメージは所定のWebページより、それぞれに必要な実行ファイル群をローカルPCに配置し、環境変数を追加してそれらの実行ファイルがWindows上で認識される必要があります。conf\base\spark.ymlの`spark_home:`と`hadoop_home:`に実行ファイルのパスを入力してください。
-詳細については、[winutilsのREADME.md](https://github.com/kitfactory/winutils)を参照してください。
+ローカル環境で`spark`を実行するため、`spark`と`hadoop`の実行環境をローカルPCに構築する必要があります。構築のイメージは所定のWebページより、それぞれに必要な実行ファイル群をローカルPCに配置し、環境変数を追加してそれらの実行ファイルがWindows上で認識される必要があります。
+詳細については、[winutilsのREADME.md](https://github.com/kitfactory/winutils)を参照してください。2.2のVisualC++インストールは不要です。
 
 ライブラリのバージョン:
 　spark-3.4.0　hadoop-3.3.5
